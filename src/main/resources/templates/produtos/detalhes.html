@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Detalhes do Produto</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+  <h1>Detalhes do Produto</h1>
+</header>
+<main class="container">
+  <div class="main-content">
+    <p>ID: <span th:text="${produto.id}"></span></p>
+    <p>Nome do Produto: <span th:text="${produto.nomeProduto}"></span></p>
+    <p>Valor: <span th:text="${produto.valorProduto}"></span></p>
+    <a class="btn btn-cancel" href="/produtos/listar">Voltar à Lista</a>
+  </div>
+</main>
+<footer>
+  <p>&copy; 2024 Hydrio Mind. Todos os direitos reservados.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Empresa</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <h1>Editar Empresa</h1>
+    <div class="btn-group">
+        <a href="/empresas/listar" class="btn">Voltar para Lista</a>
+    </div>
+</header>
+
+<div class="container">
+    <form th:action="@{/empresas/editar/{id}(id=${empresaDTO.id})}" th:object="${empresaDTO}" method="post">
+        <input type="hidden" th:field="*{id}" />
+
+        <div>
+            <label for="nomeEmpresa">Nome da Empresa:</label>
+            <input type="text" id="nomeEmpresa" th:field="*{nomeEmpresa}" required>
+        </div>
+        <div>
+            <label for="nomeFantasia">Nome Fantasia:</label>
+            <input type="text" id="nomeFantasia" th:field="*{nomeFantasia}" required>
+        </div>
+        <div>
+            <label for="cnpj">CNPJ:</label>
+            <input type="text" id="cnpj" th:field="*{cnpj}" required>
+        </div>
+        <div>
+            <button type="submit">Atualizar Empresa</button>
+        </div>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2024 Hydrio Mind. Todos os direitos reservados.</p>
+</footer>
+</body>
+</html>

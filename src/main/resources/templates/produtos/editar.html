@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Produto</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <h1>Editar Produto</h1>
+    <div class="btn-group">
+        <a href="/produtos/listar" class="btn">Voltar para Lista</a>
+    </div>
+</header>
+
+<div class="container">
+    <form th:action="@{/produtos/editar/{id}(id=${produtoDTO.id})}" th:object="${produtoDTO}" method="post">
+        <div>
+            <label for="nomeProduto">Nome do Produto:</label>
+            <input type="text" id="nomeProduto" th:field="*{nomeProduto}" required>
+        </div>
+        <div>
+            <label for="valorProduto">Valor:</label>
+            <input type="text" id="valorProduto" th:field="*{valorProduto}" required>
+        </div>
+        <div>
+            <button type="submit">Atualizar Produto</button>
+        </div>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2024 Hydrio Mind. Todos os direitos reservados.</p>
+</footer>
+</body>
+</html>
