@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Recomendação</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+    <h1>Detalhes da Recomendação</h1>
+
+    <div>
+        <p><strong>Descrição:</strong> ${recomendacao.descricao}</p>
+        <p><strong>Implementada:</strong> ${recomendacao.implementada ? 'Sim' : 'Não'}</p>
+    </div>
+
+    <a href="/recomendacoes/listar">Voltar para a lista</a>
+    <a href="/recomendacoes/editar/${recomendacao.id}">Editar</a>
+    <a href="/recomendacoes/deletar/${recomendacao.id}">Deletar</a>
+
+</body>
+</html>

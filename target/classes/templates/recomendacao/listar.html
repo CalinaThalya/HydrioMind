@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Recomendações</title>
+    <!-- Estilos CSS (se necessário) -->
+    <link rel="stylesheet" href="path/to/your/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tabela de Recomendações</h1>
+        
+        <!-- Botão para adicionar nova recomendação -->
+        <a href="/recomendacoes/cadastrar" class="btn btn-primary">Adicionar Recomendação</a>
+
+        <table class="table table-striped mt-3">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Descrição</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Iterar sobre as recomendações e exibir os dados -->
+                <th:block th:each="recomendacao : ${recomendacoes}">
+                    <tr>
+                        <td th:text="${recomendacao.id}"></td>
+                        <td th:text="${recomendacao.descricao}"></td>
+                        <td th:text="${recomendacao.implementada ? 'Implementada' : 'Não Implementada'}"></td>
+                        <td>
+                            <!-- Links para Editar e Deletar -->
+                            <a href="/recomendacoes/editar/{id}" class="btn btn-warning">Editar</a>
+                            <a href="/recomendacoes/deletar/{id}" class="btn btn-danger">Deletar</a>
+                        </td>
+                    </tr>
+                </th:block>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

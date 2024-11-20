@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Hydrio Mind</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 
@@ -16,19 +16,26 @@
     <div class="form-container">
         <div class="form-section" id="login-section">
             <h2>Login</h2>
-            <form th:action="@{/req/login}" method="post">
+            
+            <!-- Exibindo mensagem de erro se o parâmetro 'error' estiver presente na URL -->
+            <div th:if="${param.error}" style="color: red;">
+                <p>Usuário ou senha inválidos. Tente novamente.</p>
+            </div>
+            
+            <form action="/req/login" method="post">
                 <div>
-                    <label>Nome:</label>
-                    <input type="text" name="username" required>
+                    <label for="username">Nome:</label>
+                    <input type="text" id="username" name="username" required aria-label="Nome de usuário">
                 </div>
                 <div>
-                    <label>Senha:</label>
-                    <input type="password" name="password" required>
+                    <label for="password">Senha:</label>
+                    <input type="password" id="password" name="password" required aria-label="Senha">
                 </div>
                 <div>
                     <button type="submit">Login</button>
                 </div>
             </form>
+
             <div>
                 <p>Ainda não tem uma conta? <a href="/req/signup" class="btn">Registre-se aqui!</a></p>
             </div>

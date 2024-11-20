@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deletar Recomendação</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+    <h1>Confirmar Deleção</h1>
+
+    <p>Tem certeza de que deseja deletar a recomendação abaixo?</p>
+
+    <div>
+        <p><strong>Descrição:</strong> ${recomendacao.descricao}</p>
+        <p><strong>Implementada:</strong> ${recomendacao.implementada ? 'Sim' : 'Não'}</p>
+    </div>
+
+    <form action="/recomendacoes/deletar/${recomendacao.id}" method="post">
+        <button type="submit">Sim, deletar</button>
+    </form>
+
+    <a href="/recomendacoes/listar">Cancelar</a>
+
+</body>
+</html>

@@ -1,26 +1,22 @@
 package br.com.fiap.hydriomind.entity;
 
-import jakarta.persistence.*;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.annotation.Id;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
-@Table(name = "T_TECH_USUARIO")
+@Document(collection = "T_HM_USUARIO") // Mapeia a coleção no MongoDB
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Usuario {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_USUARIO")
-    private Long id;
+    @Id 
+    private String id; 
 
-    @Column(name = "USERNAME", unique = true, nullable = false)
-    private String username;
+    private String username; 
 
-    @Column(name = "PASSWORD", nullable = false)
-    private String password;
-
+    private String password; 
 }
